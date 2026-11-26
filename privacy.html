@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Scarf and Bolts</title>
 <style>
-  :root { --bg:#fff8f0; --ink:#1f2430; --muted:#5b6170; --accent:#ff8a2a; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#16181f; --ink:#f1f1f4; --muted:#a8adba; } }
+  :root { --bg:#fff8f0; --ink:#1f2430; --muted:#5b6170; --accent:#d9620b; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16181f; --ink:#f1f1f4; --muted:#a8adba; --accent:#ff9a45; } }
   body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
   main { max-width:720px; margin:0 auto; padding:48px 20px; }
   h1 { font-size:2rem; margin-bottom:4px; }
@@ -22,30 +22,37 @@
   <p class="muted">Last updated: 26 November 2026</p>
 
   <p>This policy describes the "Leo Factory" application operated by Scarf and Bolts
-  (the "App"). The App is a private publishing tool used only by the owner of the
+  (the "App"). The App is a private, internal publishing tool used only by the owner of the
   Scarf and Bolts YouTube channel to upload that channel's own videos.</p>
 
+  <h2>YouTube API Services</h2>
+  <p>The App uses <strong>YouTube API Services</strong>. By using the App's YouTube features you
+  agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.
+  Google's handling of your data is described in the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
   <h2>What the App accesses</h2>
-  <p>With the channel owner's permission (Google OAuth), the App uses the
-  <strong>YouTube API Services</strong> to upload videos to the owner's own channel and to read
-  that channel's basic information (its name) to confirm the correct channel is connected.
-  The App does not access, collect or store any information about viewers, other
-  YouTube users or members of the public.</p>
+  <p>With the channel owner's permission (Google OAuth 2.0), the App:</p>
+  <ul>
+    <li>uploads videos to the owner's own channel (<code>videos.insert</code>), and</li>
+    <li>reads the connected channel's name once at sign-in (<code>channels.list</code>) to confirm the correct channel is connected.</li>
+  </ul>
+  <p>The App does not access, collect, store or share any information about viewers, other
+  YouTube users or members of the public. It does not use cookies or analytics.</p>
 
-  <h2>How information is stored</h2>
-  <p>The only credential the App keeps is the channel owner's OAuth refresh token, stored
-  encrypted in the owner's private GitHub repository secrets. It is used solely to upload
-  the owner's videos and is never sold, shared or transferred to anyone.</p>
+  <h2>What is stored, and where</h2>
+  <ul>
+    <li>The channel owner's OAuth refresh token, stored encrypted in the owner's private GitHub
+    repository secrets, used only to upload the owner's videos.</li>
+    <li>The YouTube video ID of each video the App uploads, so the same video is not uploaded twice.</li>
+  </ul>
+  <p>No other YouTube API data is stored. Data is never sold, shared or transferred to anyone.</p>
 
-  <h2>Third-party services</h2>
-  <p>By using YouTube features of this App you are agreeing to be bound by the
-  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's handling of data
-  is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
-
-  <h2>Revoking access</h2>
+  <h2>Deleting data and revoking access</h2>
   <p>Access can be revoked at any time from the
   <a href="https://myaccount.google.com/permissions">Google security settings page</a>.
-  When access is revoked, the stored token stops working and is deleted.</p>
+  After revocation, the stored token stops working and is deleted from the repository secrets
+  within 7 days. Stored video IDs can be deleted at any time on request.</p>
 
   <h2>Children</h2>
   <p>The App does not collect any personal information from anyone, including children.</p>
@@ -56,6 +63,8 @@
   <h2>Contact</h2>
   <p>Questions about this policy: send a message through the
   <a href="https://www.youtube.com/@ScarfandBolts/about">Scarf and Bolts YouTube channel</a>.</p>
+
+  <p class="muted"><a href="terms.html">Terms of Service</a></p>
 </main>
 </body>
 </html>
